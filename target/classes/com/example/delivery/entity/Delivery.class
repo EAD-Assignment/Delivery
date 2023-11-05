@@ -1,0 +1,276 @@
+
+package com.example.delivery.entity;
+
+import java.sql.Timestamp;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(
+    collection = "delivery"
+)
+public class Delivery {
+    @Id
+    private Long deliveryId;
+    private Integer restaurantId;
+    private Timestamp estimated_delivery_time;
+    private Integer orderId;
+    private Integer userId;
+    private Timestamp actual_delivery_time;
+    private Integer deliveryPersonId;
+    private String deliveryAddress;
+    @Enumerated(EnumType.STRING)
+    private DeliveryStatus deliveryStatus;
+    private String completed;
+
+    public Long getDeliveryId() {
+        return this.deliveryId;
+    }
+
+    public Integer getRestaurantId() {
+        return this.restaurantId;
+    }
+
+    public Timestamp getEstimated_delivery_time() {
+        return this.estimated_delivery_time;
+    }
+
+    public Integer getOrderId() {
+        return this.orderId;
+    }
+
+    public Integer getUserId() {
+        return this.userId;
+    }
+
+    public Timestamp getActual_delivery_time() {
+        return this.actual_delivery_time;
+    }
+
+    public Integer getDeliveryPersonId() {
+        return this.deliveryPersonId;
+    }
+
+    public String getDeliveryAddress() {
+        return this.deliveryAddress;
+    }
+
+    public DeliveryStatus getDeliveryStatus() {
+        return this.deliveryStatus;
+    }
+
+    public String getCompleted() {
+        return this.completed;
+    }
+
+    public void setDeliveryId(final Long deliveryId) {
+        this.deliveryId = deliveryId;
+    }
+
+    public void setRestaurantId(final Integer restaurantId) {
+        this.restaurantId = restaurantId;
+    }
+
+    public void setEstimated_delivery_time(final Timestamp estimated_delivery_time) {
+        this.estimated_delivery_time = estimated_delivery_time;
+    }
+
+    public void setOrderId(final Integer orderId) {
+        this.orderId = orderId;
+    }
+
+    public void setUserId(final Integer userId) {
+        this.userId = userId;
+    }
+
+    public void setActual_delivery_time(final Timestamp actual_delivery_time) {
+        this.actual_delivery_time = actual_delivery_time;
+    }
+
+    public void setDeliveryPersonId(final Integer deliveryPersonId) {
+        this.deliveryPersonId = deliveryPersonId;
+    }
+
+    public void setDeliveryAddress(final String deliveryAddress) {
+        this.deliveryAddress = deliveryAddress;
+    }
+
+    public void setDeliveryStatus(final DeliveryStatus deliveryStatus) {
+        this.deliveryStatus = deliveryStatus;
+    }
+
+    public void setCompleted(final String completed) {
+        this.completed = completed;
+    }
+
+    public boolean equals(final Object o) {
+        if (o == this) {
+            return true;
+        } else if (!(o instanceof Delivery)) {
+            return false;
+        } else {
+            Delivery other = (Delivery)o;
+            if (!other.canEqual(this)) {
+                return false;
+            } else {
+                Object this$deliveryId = this.getDeliveryId();
+                Object other$deliveryId = other.getDeliveryId();
+                if (this$deliveryId == null) {
+                    if (other$deliveryId != null) {
+                        return false;
+                    }
+                } else if (!this$deliveryId.equals(other$deliveryId)) {
+                    return false;
+                }
+
+                Object this$restaurantId = this.getRestaurantId();
+                Object other$restaurantId = other.getRestaurantId();
+                if (this$restaurantId == null) {
+                    if (other$restaurantId != null) {
+                        return false;
+                    }
+                } else if (!this$restaurantId.equals(other$restaurantId)) {
+                    return false;
+                }
+
+                Object this$orderId = this.getOrderId();
+                Object other$orderId = other.getOrderId();
+                if (this$orderId == null) {
+                    if (other$orderId != null) {
+                        return false;
+                    }
+                } else if (!this$orderId.equals(other$orderId)) {
+                    return false;
+                }
+
+                label110: {
+                    Object this$userId = this.getUserId();
+                    Object other$userId = other.getUserId();
+                    if (this$userId == null) {
+                        if (other$userId == null) {
+                            break label110;
+                        }
+                    } else if (this$userId.equals(other$userId)) {
+                        break label110;
+                    }
+
+                    return false;
+                }
+
+                label103: {
+                    Object this$deliveryPersonId = this.getDeliveryPersonId();
+                    Object other$deliveryPersonId = other.getDeliveryPersonId();
+                    if (this$deliveryPersonId == null) {
+                        if (other$deliveryPersonId == null) {
+                            break label103;
+                        }
+                    } else if (this$deliveryPersonId.equals(other$deliveryPersonId)) {
+                        break label103;
+                    }
+
+                    return false;
+                }
+
+                Object this$estimated_delivery_time = this.getEstimated_delivery_time();
+                Object other$estimated_delivery_time = other.getEstimated_delivery_time();
+                if (this$estimated_delivery_time == null) {
+                    if (other$estimated_delivery_time != null) {
+                        return false;
+                    }
+                } else if (!this$estimated_delivery_time.equals(other$estimated_delivery_time)) {
+                    return false;
+                }
+
+                label89: {
+                    Object this$actual_delivery_time = this.getActual_delivery_time();
+                    Object other$actual_delivery_time = other.getActual_delivery_time();
+                    if (this$actual_delivery_time == null) {
+                        if (other$actual_delivery_time == null) {
+                            break label89;
+                        }
+                    } else if (this$actual_delivery_time.equals(other$actual_delivery_time)) {
+                        break label89;
+                    }
+
+                    return false;
+                }
+
+                label82: {
+                    Object this$deliveryAddress = this.getDeliveryAddress();
+                    Object other$deliveryAddress = other.getDeliveryAddress();
+                    if (this$deliveryAddress == null) {
+                        if (other$deliveryAddress == null) {
+                            break label82;
+                        }
+                    } else if (this$deliveryAddress.equals(other$deliveryAddress)) {
+                        break label82;
+                    }
+
+                    return false;
+                }
+
+                Object this$deliveryStatus = this.getDeliveryStatus();
+                Object other$deliveryStatus = other.getDeliveryStatus();
+                if (this$deliveryStatus == null) {
+                    if (other$deliveryStatus != null) {
+                        return false;
+                    }
+                } else if (!this$deliveryStatus.equals(other$deliveryStatus)) {
+                    return false;
+                }
+
+                Object this$completed = this.getCompleted();
+                Object other$completed = other.getCompleted();
+                if (this$completed == null) {
+                    if (other$completed != null) {
+                        return false;
+                    }
+                } else if (!this$completed.equals(other$completed)) {
+                    return false;
+                }
+
+                return true;
+            }
+        }
+    }
+
+    protected boolean canEqual(final Object other) {
+        return other instanceof Delivery;
+    }
+
+    public int hashCode() {
+        int PRIME = true;
+        int result = 1;
+        Object $deliveryId = this.getDeliveryId();
+        result = result * 59 + ($deliveryId == null ? 43 : $deliveryId.hashCode());
+        Object $restaurantId = this.getRestaurantId();
+        result = result * 59 + ($restaurantId == null ? 43 : $restaurantId.hashCode());
+        Object $orderId = this.getOrderId();
+        result = result * 59 + ($orderId == null ? 43 : $orderId.hashCode());
+        Object $userId = this.getUserId();
+        result = result * 59 + ($userId == null ? 43 : $userId.hashCode());
+        Object $deliveryPersonId = this.getDeliveryPersonId();
+        result = result * 59 + ($deliveryPersonId == null ? 43 : $deliveryPersonId.hashCode());
+        Object $estimated_delivery_time = this.getEstimated_delivery_time();
+        result = result * 59 + ($estimated_delivery_time == null ? 43 : $estimated_delivery_time.hashCode());
+        Object $actual_delivery_time = this.getActual_delivery_time();
+        result = result * 59 + ($actual_delivery_time == null ? 43 : $actual_delivery_time.hashCode());
+        Object $deliveryAddress = this.getDeliveryAddress();
+        result = result * 59 + ($deliveryAddress == null ? 43 : $deliveryAddress.hashCode());
+        Object $deliveryStatus = this.getDeliveryStatus();
+        result = result * 59 + ($deliveryStatus == null ? 43 : $deliveryStatus.hashCode());
+        Object $completed = this.getCompleted();
+        result = result * 59 + ($completed == null ? 43 : $completed.hashCode());
+        return result;
+    }
+
+    public String toString() {
+        Long var10000 = this.getDeliveryId();
+        return "Delivery(deliveryId=" + var10000 + ", restaurantId=" + this.getRestaurantId() + ", estimated_delivery_time=" + String.valueOf(this.getEstimated_delivery_time()) + ", orderId=" + this.getOrderId() + ", userId=" + this.getUserId() + ", actual_delivery_time=" + String.valueOf(this.getActual_delivery_time()) + ", deliveryPersonId=" + this.getDeliveryPersonId() + ", deliveryAddress=" + this.getDeliveryAddress() + ", deliveryStatus=" + String.valueOf(this.getDeliveryStatus()) + ", completed=" + this.getCompleted() + ")";
+    }
+
+    public Delivery() {
+        this.deliveryStatus = DeliveryStatus.PICKED_UP;
+    }
+}
