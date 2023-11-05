@@ -1,0 +1,32 @@
+
+package com.example.delivery.service;
+
+import com.example.delivery.entity.Delivery;
+import com.example.delivery.entity.DeliveryStatus;
+import com.example.delivery.repo.DeliveryRepo;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class DeliveryService {
+    @Autowired
+    private DeliveryRepo deliveryRepo;
+
+    public DeliveryService() {
+    }
+
+    public List<Delivery> allDelivers() {
+        return this.deliveryRepo.findAll();
+    }
+
+    public Delivery createDelivery(Delivery delivery) {
+        return (Delivery)this.deliveryRepo.save(delivery);
+    }
+
+    public void updateDeliveryStatus(Long deliveryId, DeliveryStatus deliveryStatus) {
+        Delivery updateDelivery = (Delivery)this.deliveryRepo.findById(deliveryId).orElse((Object)null);
+        updateDelivery.setDeliveryStatus(deliveryStatus);
+        this.deliveryRepo.save(updateDelivery);
+    }
+}
