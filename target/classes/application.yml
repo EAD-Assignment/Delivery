@@ -1,0 +1,5 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://shobishasm20:Password123@clusters.zklt4ks.mongodb.net/?retryWrites=true&w=majority
+      database: deliveryService
