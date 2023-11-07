@@ -32,4 +32,10 @@ public class DeliveryController {
 
     }
 
+    @PostMapping("/send-email")
+    public String sendEmail(@RequestBody EmailMessage emailMessage){
+        this.emailSenderService.sendEmail(emailMessage.getTo(),emailMessage.getSubject(),emailMessage.getMessage());
+        return "Email has been send successfully to customers.";
+    }
+
 }
