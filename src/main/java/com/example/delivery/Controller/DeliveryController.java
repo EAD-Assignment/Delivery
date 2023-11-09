@@ -26,10 +26,9 @@ public class DeliveryController {
     }
 
     @PutMapping("/updateStatus/{deliveryId}")
-    public String updateDeliveryStatus(@PathVariable Long deliveryId,@RequestParam DeliveryStatus deliveryStatus){
-        deliveryService.updateDeliveryStatus(deliveryId,deliveryStatus);
+    public String updateDeliveryStatus(@PathVariable Long deliveryId, @RequestParam String deliveryStatus) {
+        deliveryService.updateDeliveryStatus(deliveryId, DeliveryStatus.valueOf(deliveryStatus));
         return "delivery status updated";
-
     }
 
     @PostMapping("/send-email")
