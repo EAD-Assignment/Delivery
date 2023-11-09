@@ -12,17 +12,12 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @Document(collection = "delivery")
 public class Delivery {
-
     @Id
     private Long deliveryId;
     private Timestamp estimated_delivery_time;
-    private Integer orderId;
-    private Integer userId;
     private Timestamp actual_delivery_time;
-    private Integer deliveryPersonId;
     private String deliveryAddress;
     @Enumerated(EnumType.STRING)
     private DeliveryStatus deliveryStatus=DeliveryStatus.PICKED_UP;
-    private String completed;
 
 }
